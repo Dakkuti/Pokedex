@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux';
 import {startLoginEmailPassword, startGoogleLogin,startFacebookLogin} from '../../actions/authAction';
 
 const Form = styled.form`
-    width: 25%;
+    width: 300px;
     margin: 0px auto;
     margin-top: 30px;
     .form-title{

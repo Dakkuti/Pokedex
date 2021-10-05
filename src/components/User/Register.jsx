@@ -11,7 +11,7 @@ import { Navbar } from '../Navbar'
 
 
 const Form = styled.form`
-    width: 25%;
+    width: 250px;
     margin: 0px auto;
     margin-top: 30px;
     .form-title{

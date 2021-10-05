@@ -82,12 +82,10 @@ li p{
     width: 80px;
 }
 
-.contenedorDetails
-{
-    background-image: url(https://images7.alphacoders.com/662/662102.png);
-    background-size: 105%;
+.contenedorDetails {
+  background-image: url(https://images7.alphacoders.com/662/662102.png);
+  background-size: auto;
 }
-
 /*DETALLE STAST*/
 
 .containerStats{
@@ -210,10 +208,9 @@ margin:0px auto;
 
 .mb-3 input {
   width: 100%;
-  border: none;
   border-radius: 5px;
+  border: 2px solid #efefef;
 }
-
 .col-md-4.py-1.container
 {
   width: min-content;
