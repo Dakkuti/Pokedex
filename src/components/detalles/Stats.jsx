@@ -1,5 +1,5 @@
 
-import React, {useMemo, useEffect, useState } from "react";
+import React from "react";
 import styled from 'styled-components';
 
 export const Stats = (props) => {

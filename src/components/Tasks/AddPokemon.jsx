@@ -1,5 +1,5 @@
   
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CardNew, startUploading, Edit,clearCard} from '../../actions/taskAction';
 import { useForm } from '../../hooks/useForm'
@@ -7,39 +7,37 @@ import { useForm } from '../../hooks/useForm'
 
 
 export const AddPokemon = () => {
-    //dispatch para traer funciones asincronicas
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const { active } = useSelector(state => state.card);
+  const { active } = useSelector(state => state.card);
 
-    const [formValue, handleInputChange, reset] = useForm(active)
-  
-    const activeId = useRef(active.id)
+  const activeId = useRef(active.id)
 
-    useEffect(() => {
-        if (active.id !== activeId.current) {
-        reset(active)
-        }
-        activeId.current = active.id
-    }, [active])
-
-
-    //desectructuro
-    const {nombre , tipo , description , experiencia } = formValue;
-
-    //Metodo para agregar una pelicula nueva
-
-    const handleNewCard = (e) => {
-        e.preventDefault();
-    
-        if (active.nombre == "") {
-          dispatch(CardNew(formValue))
-          reset()
-        } else if(active.id !== ""){
-          dispatch(Edit(formValue))
-        }
-        dispatch(clearCard())
+  useEffect(() => {
+      if (active.id !== activeId.current) {
+      reset(active)
       }
+      activeId.current = active.id
+  }, [active])
+
+  const [formValue, handleInputChange, reset] = useForm(active)
+
+  //desectructuro
+  const {nombre , tipo  , Habilidad } = formValue;
+
+  //Metodo para agregar un pokemon 
+
+  const handleNewCard= (e) => {
+      e.preventDefault();
+  
+      if (active.nombre === "") {
+        dispatch(CardNew(formValue))
+        reset()
+      } else if(active.id !== ""){
+        dispatch(Edit(formValue))
+      }
+      dispatch(clearCard())
+    }
 
     //Metodo para agregar mi imagen
     const handleFileChange = (e) => {
@@ -57,18 +55,15 @@ export const AddPokemon = () => {
             <form onSubmit={handleNewCard} id="form-addMovie"> 
 
                 <label htmlFor="nombre" className="form-label">Nombre</label>
-                <input  type="text" name="nombre" value={nombre} onChange={handleInputChange}/>
+                <input  type="text" name="nombre" value={nombre} onChange={handleInputChange} required/>
                 
                 <label htmlFor="tipo" className="form-label">Tipo</label>
-                <input  type="text" name="tipo" value={tipo} onChange={handleInputChange}/>
+                <input  type="text" name="tipo" value={tipo} onChange={handleInputChange} required/>
                 
-                <input id="fileSelector" type="file" name="file" onChange={handleFileChange}/>
-                
-                <label htmlFor="description" className="form-label">Descripcion</label>
-                <input  type="text" name="description" value={description} onChange={handleInputChange}/>
+                <input id="fileSelector" type="file" name="file" onChange={handleFileChange} required/>
 
-                <label htmlFor="experiencia" className="form-label">Experiencia</label>
-                <input  type="text" name="experiencia" value={experiencia} onChange={handleInputChange}/>
+                <label htmlFor="Habilidad" className="form-label">Habilidad</label>
+                <input  type="text" name="Habilidad" value={Habilidad} onChange={handleInputChange} required/>
                 
                 <button type="submit" className="btn btn-primary mt-2">Agregar</button>
             </form>

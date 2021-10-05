@@ -151,6 +151,45 @@ li p{
 #desc-moviesCard{
   text-align: justify;
 }
+
+/*pokemoncard*/
+.container.pokemon{
+  display: flex;
+  flex-flow: wrap;
+  margin-top: 25px;
+
+}
+.img-pokemon {
+  width: 70%;
+  height: 180px;
+}
 .mt-4 {
     margin-top: -0.5rem!important;
+}
+
+
+/*input login*/
+.mb-3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -5px;
+}
+
+
+
+.mb-3 input {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+.col-md-4.py-1.container
+{
+  width: min-content;
+}
+
+.card.mt-2.container.text-center
+{
+  width: 350px;
 }

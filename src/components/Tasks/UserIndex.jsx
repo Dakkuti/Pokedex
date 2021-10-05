@@ -23,10 +23,10 @@ export const UserIndex = () => {
                     <div className="col-md-8">
                         <div className="row">
                             <main>
-                                
+                                {
                                     <PokemonCard card={card} />
                                 
-
+                                }
                             </main>
                         </div>
                     </div>

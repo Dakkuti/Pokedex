@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import img from '../assets/3337437.png';
 
-import { Verificar } from "../helpers/verificar";
+import { Navbar } from "./Navbar";
 
 const Index = () => {
 
@@ -11,7 +11,7 @@ const Index = () => {
     const [pokemonList, setPokemonList] = useState([]);
     const [search, setSearch] = useState('');
 
-
+    console.log(search);
     //consumo la api desde una promesa normal
     const obtenerPokemons = async () => {
         const url = `https://pokeapi.co/api/v2/pokemon/?limit=26`;
@@ -79,7 +79,7 @@ const Index = () => {
 
     return (
         <div>
-            <Verificar />
+            <Navbar/>
             <div className="container--pokemones">
                 <h1 className="container--title">Pokémones</h1>
 

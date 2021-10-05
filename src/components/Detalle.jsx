@@ -75,7 +75,7 @@ img{
 `;
 
 
-export const Detalle = (pokemon) => {
+export const Detalle = () => {
 
     const {id} = useParams();
 
@@ -95,10 +95,10 @@ export const Detalle = (pokemon) => {
     useEffect(() => {
         getPokemonData(id);
    
-    }, []);
+    }, [id]);
 
 
-    console.log(id);
+    //console.log(id);
     return (
       <div className="contenedorDetails">
         <Container className="Container-Details">

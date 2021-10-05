@@ -17,35 +17,25 @@ export const CardNew = (card) => {
             nombre: card.nombre,
             tipo: card.tipo,
             image: fileUrl,
-            description: card.description,
-            experiencia: card.experiencia
+            Habilidad: card.Habilidad
        }
        //AGREGO A MI COLECCION FIREBASE
 
 
-       try {
-        await db.collection('/Card').doc().set(newCard)
-         Swal.fire({
-             position: 'top-end',
-             text: 'Agregando...',
-             icon: 'success',
-             showConfirmButton: false,
-             timer: 1500
-           })
-     } catch (e) {
-         Swal.fire({
-             icon: 'error',
-             title: 'Oops...',
-             text: e,
-             footer: ''
-           })
-     }
-     dispatch(addNewCard(newCard))
-     dispatch(ListarCard())
+    const docRef = await db.collection(`${uid}/Card/Card`).add(newCard)
+    dispatch(addNewCard(docRef.id, newCard))
 
-    
+    }
 }
-}
+
+export const addNewCard = (id,card) => ({
+    type: types.cardAddNew,
+    payload: {
+        id,...card
+    }
+})
+
+
 
 
 export const Edit = (card) => {
@@ -60,8 +50,8 @@ export const Edit = (card) => {
             nombre: card.nombre,
             tipo: card.tipo,
             image: fileUrl,
-            description: card.description,
-            experiencia: card.experiencia
+            Habilidad: card.Habilidad
+           
         }
 
         const cardFire = { ...EditCard  }
@@ -76,7 +66,7 @@ export const Edit = (card) => {
             }
         })
 
-        await db.doc(`/Card/${card.id}`).update(EditCard)
+        await db.doc(`${uid}/Card/Card/${card.id}`).update(EditCard)
            console.log(EditCard)
 
         Swal.fire('Saved', card.nombre, 'success');
@@ -84,14 +74,12 @@ export const Edit = (card) => {
     }
 }
 
-
 export const Delete = (id) => {
     return async (dispatch, getState) => {
 
         const uid = getState().auth.uid;
-        const card = getState().auth.card;
 
-        await db.doc(`Card/${id}`).delete();
+        await db.doc(`${uid}/Card/Card/${id}`).delete();
 
         dispatch(deleteCard(id));
         Swal.fire({
@@ -127,13 +115,6 @@ export const startUploading = (file) => {
 }
 
 //FUNCIÓNES SINCRÓNICAS
-
-export const addNewCard = ( id, card ) => ({
-    type: types.cardAddNew,
-    payload: {
-        id, ...card
-    }
-})
 
 export const ListarCard = (uid) => {
     return async (dispatch) =>{

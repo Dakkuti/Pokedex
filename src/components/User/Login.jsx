@@ -88,7 +88,7 @@ export const Login = () => {
         </div>
             <br/>
             <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Email</label>
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                     <input
                         type="email"
                         className="form-control"
@@ -102,7 +102,7 @@ export const Login = () => {
 
                 </div>
                 <div className="mb-3">
-                    <label for="exampleInputPassword1" className="form-label">Contraseña</label>
+                    <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
                     <input
                         type="password"
                         className="form-control"

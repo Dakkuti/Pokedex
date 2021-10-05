@@ -18,7 +18,7 @@ export const NavbarAuth = () => {
                 </a>
 
 
-                <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div className="offcanvas-header">
                         <h5 className="offcanvas-title" id="offcanvasExampleLabel">Pokedex</h5>
                         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -31,7 +31,7 @@ export const NavbarAuth = () => {
                         <p  id="offcanvas-subtitle">Bienvenido/a {name}</p>
                         <br />
 
-                        <a onClick={() => dispatch(startLogout())}> Cerrar Sesion</a>
+                        <a href="/" onClick={() => dispatch(startLogout())}> Cerrar Sesion</a>
                     </div>
 
 

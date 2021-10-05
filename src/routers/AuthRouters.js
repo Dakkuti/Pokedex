@@ -2,7 +2,6 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import {Login} from "../components/User/Login";
-import Index from '../components/Index';
 import { Detalle } from '../components/Detalle';
 import { UserIndex } from "../components/Tasks/UserIndex";
 import { Register } from "../components/User/Register";
