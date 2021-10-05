@@ -88,6 +88,36 @@ li p{
     background-size: 105%;
 }
 
+/*DETALLE STAST*/
+
+.containerStats{
+  display: flex;
+flex-flow: row;
+width: 230px;
+margin:0px auto;
+
+}
+.statsOne{
+  width: 100px;
+  margin-right: 20px;
+
+}
+
+.list{
+  margin-bottom: -15px;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #23c95a;
+  transition: width .6s ease;
+}
 
 /*AGREGAR*/
 /*CARDS*/

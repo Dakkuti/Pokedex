@@ -16,6 +16,8 @@ background: #f2fcff;
 
 `;
 
+
+
 const Profile = styled.div`
 display: flex;
 flex-direction: column;
@@ -124,6 +126,7 @@ export const Detalle = () => {
           </div>
           </Profile>
           <h4 style={{textAlign: "center"}}>Base Stats</h4>
+
           <Stats prop={pokemonDetails}/>
           
           

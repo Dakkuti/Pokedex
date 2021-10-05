@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { activeCard, Delete, ListarCard } from '../../actions/taskAction';
 import styled from 'styled-components';
 
-const Title = styled.h2`
+const TitleCard = styled.h2`
 
   color: #ffffff;
   background: #be83ffa6;
@@ -28,7 +28,7 @@ export const PokemonCard = () => {
     
     useEffect(() => {
         dispatch(ListarCard(uid));
-    }, [dispatch]);
+    }, [dispatch,uid]);
 
     const { name } = useSelector(state => state.auth)
 
@@ -42,7 +42,7 @@ export const PokemonCard = () => {
 
     return (
         <>
-            <Title>Tus pokemons Favoritos</Title>
+            <TitleCard>Tus pokemons Favoritos</TitleCard>
 
             <div className="container pokemon">
                 {

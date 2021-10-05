@@ -9,9 +9,8 @@ const Index = () => {
 
     const [pokemon, setPokemon] = useState([]);
     const [pokemonList, setPokemonList] = useState([]);
-    const [search, setSearch] = useState('');
+    const [ setSearch] = useState('');
 
-    console.log(search);
     //consumo la api desde una promesa normal
     const obtenerPokemons = async () => {
         const url = `https://pokeapi.co/api/v2/pokemon/?limit=26`;
@@ -48,6 +47,7 @@ const Index = () => {
     useEffect(() => {
         obtenerPokemons();
         obtenerDatos();
+        // eslint-disable-next-line
     }, []);
 
 
@@ -64,6 +64,7 @@ const Index = () => {
             return elemento;
           
           }
+          return resultSearch;
         });
         if(resultSearch)
         {

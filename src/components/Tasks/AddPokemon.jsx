@@ -13,14 +13,16 @@ export const AddPokemon = () => {
 
   const activeId = useRef(active.id)
 
+  const [formValue, handleInputChange, reset] = useForm(active)
+
   useEffect(() => {
       if (active.id !== activeId.current) {
       reset(active)
       }
       activeId.current = active.id
-  }, [active])
+  }, [active,reset])
 
-  const [formValue, handleInputChange, reset] = useForm(active)
+  
 
   //desectructuro
   const {nombre , tipo  , Habilidad } = formValue;

@@ -54,9 +54,6 @@ export const Edit = (card) => {
            
         }
 
-        const cardFire = { ...EditCard  }
-       // delete cardFire.id
-
         Swal.fire({
             title: 'Uploading...',
             text: 'Please wait ...',

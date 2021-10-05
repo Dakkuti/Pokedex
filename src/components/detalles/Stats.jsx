@@ -1,42 +1,11 @@
 
 import React from "react";
-import styled from 'styled-components';
 
 export const Stats = (props) => {
 
-    const ContainerStats = styled.div`
-            display: flex;
-            flex-flow: row;
-            width: 230px;
-            margin:0px auto;
-            .statsOne{
-                width: 100px;
-                margin-right: 20px;
-            
-            }
-
-            .list{
-                margin-bottom: -15px;
-            }
-
-            .progress-bar {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                overflow: hidden;
-                color: #fff;
-                text-align: center;
-                white-space: nowrap;
-                background-color: #23c95a;
-                transition: width .6s ease;
-            }
-
-    `;
-
 
     return (
-        <ContainerStats>
-                
+        <div className="containerStats">
             <div className="statsOne">
                 <div className="list">
                     <p>{props?.prop?.stats?.[0].stat.name}</p>
@@ -45,7 +14,6 @@ export const Stats = (props) => {
                                 className="progress-bar"
                                 role="progressbar"
                                 style={{ width: props?.prop?.stats?.[0].base_stat }}
-                                aria-valuenow={props?.prop?.stats?.[0].base_stat} 
                                 aria-valuemin="0"
                                 aria-valuemax="100"
                             >
@@ -61,8 +29,7 @@ export const Stats = (props) => {
                             <div
                                 className="progress-bar"
                                 role="progressbar"
-                                style={{ width: props?.prop?.stats?.[1].base_stat }}
-                                aria-valuenow={props?.prop?.stats?.[1].base_stat} 
+                                style={{ width: props?.prop?.stats?.[1].base_stat }} 
                                 aria-valuemin="0"
                                 aria-valuemax="100"
                             >
@@ -78,8 +45,7 @@ export const Stats = (props) => {
                             <div
                                 className="progress-bar"
                                 role="progressbar"
-                                style={{ width: props?.prop?.stats?.[2].base_stat }}
-                                aria-valuenow={props?.prop?.stats?.[2].base_stat} 
+                                style={{ width: props?.prop?.stats?.[2].base_stat }} 
                                 aria-valuemin="0"
                                 aria-valuemax="100"
                             >
@@ -96,8 +62,7 @@ export const Stats = (props) => {
                             <div
                                 className="progress-bar"
                                 role="progressbar"
-                                style={{ width: props?.prop?.stats?.[3].base_stat }}
-                                aria-valuenow={props?.prop?.stats?.[3].base_stat} 
+                                style={{ width: props?.prop?.stats?.[3].base_stat }} 
                                 aria-valuemin="0"
                                 aria-valuemax="100"
                             >
@@ -114,8 +79,7 @@ export const Stats = (props) => {
                             <div
                                 className="progress-bar"
                                 role="progressbar"
-                                style={{ width: props?.prop?.stats?.[4].base_stat }}
-                                aria-valuenow={props?.prop?.stats?.[4].base_stat} 
+                                style={{ width: props?.prop?.stats?.[4].base_stat }} 
                                 aria-valuemin="0"
                                 aria-valuemax="100"
                             >
@@ -130,8 +94,7 @@ export const Stats = (props) => {
                             <div
                                 className="progress-bar"
                                 role="progressbar"
-                                style={{ width: props?.prop?.stats?.[5].base_stat }}
-                                aria-valuenow={props?.prop?.stats?.[5].base_stat} 
+                                style={{ width: props?.prop?.stats?.[5].base_stat }} 
                                 aria-valuemin="0"
                                 aria-valuemax="100"
                             >
@@ -142,9 +105,9 @@ export const Stats = (props) => {
                 <br/>
             </div>
 
-   
+            </div>
 
 
-        </ContainerStats>
+       
     )
 }
