@@ -68,12 +68,7 @@ h3{
 p{
   margin-left: 50px;
 }
-img{
-  width: 90px;
-  position: absolute;
-  top: 86%;
-  left: 54%;
-}
+
 `;
 
 
@@ -135,7 +130,7 @@ export const Detalle = () => {
           <p>{pokemonDetails?.abilities?.[0]?.ability?.name}</p>
           <p>{pokemonDetails?.abilities?.[1]?.ability?.name}</p>
 
-          <img src="https://cdn.dribbble.com/users/1771704/screenshots/6124573/pokeball-800x600.gif" alt="pokeball"/>
+         
       </Abilities>
         
         </Container>
